@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import badge from '../../sports-mania-main/Leauge Logo/image 4.png';
 
 const SoccerLeague = (props) => {
+ 
     let history = useHistory();
 
     const handleClick = (teamId) => {
@@ -21,7 +22,7 @@ const SoccerLeague = (props) => {
                 <div className="card-body text-center">
                     <h6 className="card-title">{strLeague}</h6>
                     <p className="card-text">Sports type: {strSport}</p>
-                    <button onClick={() => {handleClick(idLeague)}} className="btn btn-primary">Explore <FontAwesomeIcon icon={faArrowRight} /></button>
+                    <button style={{backgroundColor:'#009688'}} onClick={() => {handleClick(idLeague)}} className="btn btn-primary">Explore <FontAwesomeIcon icon={faArrowRight} /></button>
                 </div>
             </div>
         </div>

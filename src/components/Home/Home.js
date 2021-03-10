@@ -14,14 +14,14 @@ const Home = () => {
         .then(data =>setLeagues(data.countrys.slice(0,15)))
         
     }, []);
-    // console.log(leagues)
+    
     return (
         <section style={leagueStyle.leagueHome}>
             <Header bannerDetails={true}/>
             <div className='container mt-5'>
                 <div className="row row-cols-1 row-cols-md-3 row-cols-sm-1">
                     {
-                    leagues.map((league) => <SoccerLeague league={league} id={league.idLeague}/>)
+                    leagues.map((league) => <SoccerLeague league={league} key={league.idLeague}/>)
                     }
                 </div>
             </div>

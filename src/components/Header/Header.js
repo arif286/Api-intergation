@@ -9,14 +9,14 @@ const Header = ({bannerDetails, leagueBanner,leagueLogo,leagueName}) => {
             backgroundImage: `url(${banner})`,
             backgroundRepeat: 'no-repeat, repeat',
             width: '100%',
-            height: '500px',
+            height: '550px',
             backgroundSize: 'cover'
         },
         teamsBanner: {
             backgroundImage: `linear-gradient(#0b7a92a6, #b9352ba8),url(${ leagueBanner || banner})`,
             backgroundRepeat: 'no-repeat, repeat',
             width: '100%',
-            height: '500px',
+            height: '550px',
             backgroundSize: 'cover'
         },
         leagueLayer: {
@@ -31,7 +31,7 @@ const Header = ({bannerDetails, leagueBanner,leagueLogo,leagueName}) => {
     let showBanner;
     if (bannerDetails) {
         showBanner = <div style={bgBanner.homeBanner} className='d-flex justify-content-center align-items-center'>
-        <h1 style={{color:'white'}}>World Supper Leagues</h1>
+        <h1 style={{color:'white'}}>World Class Supper Leagues</h1>
     </div>
     }
     else {
