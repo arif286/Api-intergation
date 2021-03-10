@@ -13,11 +13,12 @@ import Header from '../Header/Header';
 const Team = () => {
     const teamStyle = {
         media: { marginBottom: 0, color: 'white' },
-        widthHeight: { width:'20px', height:'20px'}
+        widthHeight: { width: '20px', height: '20px' },
+        leagueBg: { backgroundColor: '#74c2c4cf'}
     }
     let { teamId } = useParams();
     const [teams, setTeams] = useState({});
-    const { strLeague, strGender, strCountry, strSport, dateFirstEvent, strDescriptionEN} = teams;
+    const { strLeague, strGender, strCountry, strSport, dateFirstEvent, strDescriptionEN, strDescriptionFR, strFanart2, strBadge} = teams;
 
     useEffect(() => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${teamId}`
@@ -36,9 +37,9 @@ const Team = () => {
         gender = <img className='w-100 p-3' src={female} alt=''/>
     }
     return (
-      <>
-        <Header/>    
-        <div className='container mt-3'>
+      <div style={teamStyle.leagueBg}>
+            <Header bannerDetails={false} leagueBanner={strFanart2} leagueLogo={strBadge} leagueName={strLeague}/>
+        <div  className='container mt-3'>
             <div style={{backgroundColor:'cadetblue', borderRadius:'12px'}} className="row">
                  <div className="col-md-6 col-sm-12 p-5">
                     <h2 style={{color:'white'}}>{strLeague}</h2>
@@ -50,7 +51,7 @@ const Team = () => {
 
                     <div className="d-flex align-items-center py-1">
                         <img  style={teamStyle.widthHeight} src={flag} alt='' />
-                        <p style={teamStyle.media} className='px-3'>country: {strCountry}</p>
+                        <p style={teamStyle.media} className='px-3'>Country: {strCountry}</p>
                     </div>
 
                     <div className="d-flex align-items-center py-1">
@@ -73,7 +74,7 @@ const Team = () => {
                 </div>
             </div>
         </div>
-     </>
+     </div>
     );
 };
 

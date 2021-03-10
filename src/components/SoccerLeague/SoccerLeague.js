@@ -14,7 +14,7 @@ const SoccerLeague = (props) => {
     return (
        
         <div className="col mb-4">
-            <div className="card h-100">
+            <div className="card shadow  h-100">
                 <div className="d-flex justify-content-center">
                     <img src={strBadge || badge} className="card-img-top w-50" alt=""/>
                 </div>

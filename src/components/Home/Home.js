@@ -3,6 +3,9 @@ import Header from '../Header/Header';
 import SoccerLeague from '../SoccerLeague/SoccerLeague';
 
 const Home = () => {
+    const leagueStyle = {
+        leagueHome:{ backgroundColor: '#bec5cf'}
+    }
     const [leagues, setLeagues] = useState([]);
     useEffect(() => {
         const url = 'https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=England'
@@ -11,10 +14,10 @@ const Home = () => {
         .then(data =>setLeagues(data.countrys.slice(0,15)))
         
     }, []);
-    console.log(leagues)
+    // console.log(leagues)
     return (
-        <>
-            <Header/>
+        <section style={leagueStyle.leagueHome}>
+            <Header bannerDetails={true}/>
             <div className='container mt-5'>
                 <div className="row row-cols-1 row-cols-md-3 row-cols-sm-1">
                     {
@@ -22,7 +25,7 @@ const Home = () => {
                     }
                 </div>
             </div>
-        </>
+        </section>
     );
 };
 
